@@ -5,15 +5,17 @@
     <title>SOOP</title>
     <script>
         const vid=[
-            144616689,144616873,144616965,144714357,144714359,
-            145066525,145483735,145483893,146949519,146949521,
-            146949523
+            143983001,144037839,144043497,144073317,144131507,
+            144226225,144226689,144226737,144328311,144328359,
+            144427541,144427607,144716659,144716661,145066171,
+            145484425,145484427,146949761,146949763,146949769
+            
         ]
 
         function gen(){
             const seed = seedGen(vid.length);
             const randNum = maxIdx(seed);
-            return `https://vod.sooplive.co.kr/player/${vid[randNum]}/playlist/827527`
+            return `https://vod.sooplive.co.kr/player/${vid[randNum]}/playlist/824961`
         }
 
         function seedGen(num=1){
