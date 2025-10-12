@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <title>SOOP</title>
     <script>
-        const vid=[
-            156480141,156480143,156480145,156480147,156480149,
-            157936815,157936817,157936819,157936821,157936823,
-            157936825,157936827,157936829,157936831,157936833
+        const playList = [
+            {
+                "listID": 958629,
+                "vid":[
+                    174531075,174531079,174531081,174531077,174531089,
+                    174531083,174531093,174531085,174531087,174531091
+                ]
+            },{
+                "listID": 958631,
+                "vid":[
+                    174531075,174531079,174531081,174531077,174531089,
+                    174531083,174531093,174531085,174531087,174531091
+                ]
+            }
         ]
 
         function gen(){
-            const seed = seedGen(vid.length);
-            const randNum = maxIdx(seed);
-            return `https://vod.sooplive.co.kr/player/${vid[randNum]}/playlist/824961`
+            const seed = seedGen(playList.length);
+            const pid = maxIdx(seed);
+            const seed2 = seedGen(playList[pid]["vid"].length)
+            const vid = maxIdx(seed2);
+            return `https://vod.sooplive.co.kr/player/${playList[pid]["vid"][vid]}/playlist/${playList[pid]["listID"]}`
         }
 
         function seedGen(num=1){
@@ -41,3 +53,4 @@
 <body>
 </body>
 </html>
+
